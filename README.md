@@ -2,7 +2,7 @@
 
 A full-stack authentication application built with React, C#, PostgreSQL, and Docker.
 
-> **Live Demo:** [https://your-app.onrender.com](https://your-app.onrender.com) ← _replace with your Render URL_
+> **Live Demo:** [https://auth-client-zywh.onrender.com](https://auth-client-zywh.onrender.com) ← _replace with your Render URL_
 
 ---
 
