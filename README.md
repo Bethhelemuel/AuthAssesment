@@ -32,16 +32,16 @@ A full-stack authentication application built with React, C#, PostgreSQL, and Do
 
 ```
 ┌─────────────────────────────────────────────────┐
-│                Docker Compose                    │
-│                                                  │
+│                Docker Compose                   │
+│                                                 │
 │  ┌──────────────┐     ┌──────────────────────┐  │
-│  │   React App  │────▶│   C# ASP.NET API     │  │
+│  │   React App  │────▶│   C# ASP.NET API    │  │
 │  │   (nginx:80) │     │   (Port 5019)        │  │
 │  └──────────────┘     └──────────┬───────────┘  │
-│                                  │               │
+│                                  │              │
 │                       ┌──────────▼───────────┐  │
-│                       │   PostgreSQL          │  │
-│                       │   (Port 5432)         │  │
+│                       │   PostgreSQL         │  │
+│                       │   (Port 5432)        │  │
 │                       └──────────────────────┘  │
 └─────────────────────────────────────────────────┘
 ```
@@ -58,7 +58,7 @@ A full-stack authentication application built with React, C#, PostgreSQL, and Do
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/ThatoMphugo/AuthAssesment.git
+git https://github.com/Bethhelemuel/AuthAssesment.git
 cd AuthAssesment
 ```
 
