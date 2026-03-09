@@ -41,11 +41,12 @@ builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowReact", policy =>
     { 
-        policy.WithOrigins(
-            "http://localhost:5173",  // local dev
-            "http://localhost",       // Docker 
-            "http://localhost:80"     // Docker explicit 
-        )
+          policy.WithOrigins(
+                "http://localhost:5173",                // local dev
+                "http://localhost",                     // Docker 
+                "http://localhost:80",                  // Docker explicit
+                "https://auth-client-zywh.onrender.com" // Live Link 
+  )  
         .AllowAnyHeader()
         .AllowAnyMethod();
     });
