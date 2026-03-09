@@ -8,9 +8,9 @@ A full-stack authentication application built with React, C#, PostgreSQL, and Do
 
 ## 📸 Screenshots
 
-| Login | Register | Profile |
-|-------|----------|---------|
-| ![Login](./AuthClient/src/assets/login.jpg) | ![Register](./AuthClient/src/assets/register.jpg) | ![Profile](./AuthClient/src/assets/profile.jpg) |
+| Login | Register | Profile | 404 |
+|-------|----------|---------|---------|
+| ![Login](./AuthClient/src/assets/LoginBG.jpg) | ![Register](./AuthClient/src/assets/RegisterBG.jpg) | ![Profile](./AuthClient/src/assets/ProfileBG.jpg) | ![NotFound](./AuthClient/src/assets/404BG.jpg) 
 
 ---
 
@@ -72,7 +72,7 @@ POSTGRES_PORT=5432
 POSTGRES_DB=authdb
 POSTGRES_USER=postgres
 POSTGRES_PASSWORD=yourpassword
-JWT_SECRET=your-super-secret-key-that-is-long-enough
+JWT_SECRET=*****************************
 JWT_ISSUER=AuthAPI
 JWT_AUDIENCE=AuthClient
 JWT_EXPIRATIONDAYS=7
@@ -194,7 +194,7 @@ AuthAssesment/
 
 **Thato Mphugo**
 
----
+--- 
 
 ## 📄 License
 
