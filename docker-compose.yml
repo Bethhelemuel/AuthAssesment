@@ -1,0 +1,57 @@
+version: '3.8'
+
+services:
+
+  postgres:
+    image: postgres:16
+    container_name: authdb
+    environment:
+      POSTGRES_DB: authdb
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - auth-network
+
+  api:
+    build:
+      context: .
+      dockerfile: AuthAPI/Dockerfile
+    container_name: auth-api
+    ports:
+      - "5019:5019"
+    environment:
+      - ASPNETCORE_URLS=http://+:5019
+      - ConnectionStrings__DefaultConnection=Host=${POSTGRES_HOST};Port=${POSTGRES_PORT};Database=${POSTGRES_DB};Username=${POSTGRES_USER};Password=${POSTGRES_PASSWORD}
+      - JwtSettings__SecretKey=${JWT_SECRET}
+      - JwtSettings__Issuer=${JWT_ISSUER}
+      - JwtSettings__Audience=${JWT_AUDIENCE}
+      - JwtSettings__ExpiryDays=${JWT_EXPIRATIONDAYS}
+    depends_on:
+      - postgres
+    networks:
+      - auth-network
+
+  frontend:
+    build:
+      context: ./AuthClient
+      dockerfile: Dockerfile
+      args:
+      - VITE_API_URL=http://localhost/api
+    container_name: auth-frontend
+    ports:
+      - "80:80"
+    depends_on:
+      - api
+    networks:
+      - auth-network
+
+volumes:
+  postgres_data:
+
+networks:
+  auth-network:
+    driver: bridge
