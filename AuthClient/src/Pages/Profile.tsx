@@ -6,30 +6,23 @@ import profileImg from '../assets/profile.jpg'
 import Button from '../components/ui/Button'
 import Footer from '../components/ui/Footer'
 import Toast from '../components/ui/Toast'
+import Avatar from '../components/ui/Avatar'
+import InfoField from '../components/ui/InfoField'
+import LoadingSpinner from '../components/ui/LoadingSpinner'
+import {
+  PROFILE_LABELS,
+  PROFILE_CONTENT,
+  PROFILE_LAYOUT,
+  FIELD_STYLING,
+  UPDATE_INTERVALS,
+  timeAgo,
+} from '../constants'
 
 type User = {
   firstName: string
   lastName: string
   email: string
   createdAt: string
-}
-
-const timeAgo = (dateString: string): string => {
-  const now = new Date()
-  const created = new Date(dateString)
-  const seconds = Math.floor((now.getTime() - created.getTime()) / 1000)
-
-  if (seconds < 60) return 'Just now'
-  const minutes = Math.floor(seconds / 60)
-  if (minutes < 60) return `${minutes} minute${minutes !== 1 ? 's' : ''} ago`
-  const hours = Math.floor(minutes / 60)
-  if (hours < 24) return `${hours} hour${hours !== 1 ? 's' : ''} ago`
-  const days = Math.floor(hours / 24)
-  if (days < 30) return `${days} day${days !== 1 ? 's' : ''} ago`
-  const months = Math.floor(days / 30)
-  if (months < 12) return `${months} month${months !== 1 ? 's' : ''} ago`
-  const years = Math.floor(months / 12)
-  return `${years} year${years !== 1 ? 's' : ''} ago`
 }
 
 const Profile = () => {
@@ -40,6 +33,7 @@ const Profile = () => {
   const [showPassword, setShowPassword] = useState(false)
   const [isLoggingOut, setIsLoggingOut] = useState(false)
   const hasShownWelcomeRef = useRef(false)
+  const [, forceUpdate] = useState({})
 
   useEffect(() => {
     const fetchUser = async () => {
@@ -50,15 +44,24 @@ const Profile = () => {
         // Show welcome toast on first load only
         if (!hasShownWelcomeRef.current) {
           Toast({
-            text: `Hi ${res.data.firstName}!`
+            text: PROFILE_CONTENT.WELCOME_MESSAGE.replace('{firstName}', res.data.firstName)
           })
           hasShownWelcomeRef.current = true
         }
       } catch {
-        setError('Failed to load profile')
+        setError(PROFILE_CONTENT.ERROR_MESSAGE)
       }
     }
     fetchUser()
+  }, [])
+
+  // Update time ago display every minute
+  useEffect(() => {
+    const interval = setInterval(() => {
+      forceUpdate({})
+    }, UPDATE_INTERVALS.TIME_AGO)
+
+    return () => clearInterval(interval)
   }, [])
 
   const handleLogout = () => {
@@ -69,15 +72,12 @@ const Profile = () => {
   }
 
   return (
-    <div className="min-h-screen bg-blue-200 flex items-start justify-center p-0 md:items-center md:p-6">
+    <div className={PROFILE_LAYOUT.BG_COLOR}>
+      {/* ----------------- Card ----------------- */}
+      <div className={PROFILE_LAYOUT.CONTAINER_CLASSES}>
 
-      {/* Card */}
-      <div className="bg-white md:rounded-3xl shadow-lg flex w-full md:w-auto md:max-w-sm h-screen md:h-auto overflow-hidden p-6 md:p-8 flex flex-col items-center flex-1">
-
-        {/* Avatar */}
-        <div className="w-16 h-16 rounded-full overflow-hidden mb-3 shadow-md">
-          <img src={profileImg} alt="Profile avatar" className="w-full h-full object-cover" />
-        </div>
+        {/* -----------------Avatar -----------------*/}
+        <Avatar src={profileImg} alt={PROFILE_CONTENT.AVATAR_ALT} />
 
         {user ? (
           <>
@@ -87,31 +87,29 @@ const Profile = () => {
 
             <div className="w-full space-y-4">
 
-              {/* Email */}
-              <div>
-                <p className="text-xs text-gray-400 mb-1">Your Email</p>
-                <div className="flex items-center border border-gray-100 rounded-lg px-4 py-2.5 bg-gray-50 gap-2">
-                  <svg className="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              {/* ----------------- Email ----------------- */}
+              <InfoField label={PROFILE_LABELS.EMAIL}>
+                <div className={FIELD_STYLING.CONTAINER}>
+                  <svg className={FIELD_STYLING.ICON} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.207" />
                   </svg>
-                  <p className="text-sm text-gray-500">{user.email}</p>
+                  <p className={FIELD_STYLING.TEXT}>{user.email}</p>
                 </div>
-              </div>
+              </InfoField>
 
-              {/* Password */}
-              <div>
-                <p className="text-xs text-gray-400 mb-1">Password</p>
-                <div className="flex items-center justify-between border border-gray-100 rounded-lg px-4 py-2.5 bg-gray-50">
+              {/*----------------- Password  -----------------*/}
+              <InfoField label={PROFILE_LABELS.PASSWORD}>
+                <div className={FIELD_STYLING.CONTAINER}>
                   <div className="flex items-center gap-2">
-                    <svg className="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className={FIELD_STYLING.ICON} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
                     </svg>
-                    <p className="text-sm text-gray-500 tracking-widest">
-                      {showPassword ? 'MyPassword' : '••••••••'}
+                    <p className={FIELD_STYLING.PASSWORD_TEXT}>
+                      {showPassword ? PROFILE_CONTENT.PASSWORD_VISIBLE : PROFILE_CONTENT.PASSWORD_MASK}
                     </p>
                   </div>
-                  {/* Eye toggle */}
-                  <button onClick={() => setShowPassword(!showPassword)} className="text-gray-400 hover:text-gray-600 transition">
+                  {/* ----------------- Eye toggle ----------------- */}
+                  <button onClick={() => setShowPassword(!showPassword)} className={FIELD_STYLING.TOGGLE_BUTTON}>
                     {showPassword ? (
                       <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.88 9.88l-3.29-3.29m7.532 7.532l3.29 3.29M3 3l3.59 3.59m0 0A9.953 9.953 0 0112 5c4.478 0 8.268 2.943 9.543 7a10.025 10.025 0 01-4.132 5.411m0 0L21 21" />
@@ -124,29 +122,26 @@ const Profile = () => {
                     )}
                   </button>
                 </div>
-              </div>
+              </InfoField>
 
-              {/* Created */}
-              <div>
-                <p className="text-xs text-gray-400 mb-1">Created</p>
+              {/* ----------------- Created ----------------- */}
+              <InfoField label={PROFILE_LABELS.CREATED}>
                 <p className="text-sm text-gray-500 px-1">{timeAgo(user.createdAt)}</p>
-              </div>
+              </InfoField>
 
             </div>
 
-            {/* Logout */}
+            {/* ----------------- Logout ----------------- */}
             <Button variant="danger" onClick={handleLogout} disabled={isLoggingOut} className="mb-10 mt-6 relative">
               {isLoggingOut ? (
-                <div className="flex items-center justify-center">
-                  <div className="w-4 h-4 border-2 border-gray-600 border-t-transparent animate-spin rounded-full"></div>
-                </div>
+                <LoadingSpinner size="sm" />
               ) : (
-                'Logout'
+                PROFILE_CONTENT.LOGOUT_BUTTON
               )}
             </Button>
           </>
         ) : (
-          <p className="text-gray-400 text-sm">Loading...</p>
+          <p className="text-gray-400 text-sm">{PROFILE_CONTENT.LOADING_TEXT}</p>
         )}
 
         <Footer />

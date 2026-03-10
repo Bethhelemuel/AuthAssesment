@@ -120,7 +120,7 @@ docker-compose up --build
 | Service | URL |
 |---------|-----|
 | Frontend | http://localhost:8085 |
-| API | http://localhost:5019 |
+| API | http://localhost:8081 | 
 
 ---
 
@@ -277,6 +277,7 @@ AuthAssesment/
 │   ├── src/
 │   │   ├── api/              # Axios instance
 │   │   ├── components/       # Reusable UI components
+│   │   ├── constants/        # App-wide constants
 │   │   ├── context/          # AuthContext (JWT storage)
 │   │   ├── pages/            # Auth + Profile pages
 │   │   └── assets/           # Images
