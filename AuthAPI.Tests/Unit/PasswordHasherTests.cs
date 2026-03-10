@@ -9,7 +9,7 @@ namespace AuthAPI.Tests.Unit
         {
             // Arrange
             var password = "Password123";
-
+             
             // Act
             var hash = BCrypt.Net.BCrypt.HashPassword(password);
 

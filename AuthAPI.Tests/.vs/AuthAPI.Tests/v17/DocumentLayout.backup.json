@@ -1,22 +1,30 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\work\\WongaAssesment\\AuthAPI.Tests\\",
+  "WorkspaceRootPath": "C:\\work\\AuthAssesment\\AuthAPI.Tests\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{839443B0-A5A4-4364-827B-ED0ADDF32C94}|AuthAPI.Tests.csproj|c:\\work\\wongaassesment\\authapi.tests\\unit\\jwtservicetests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{839443B0-A5A4-4364-827B-ED0ADDF32C94}|AuthAPI.Tests.csproj|c:\\work\\authassesment\\authapi.tests\\integration\\authcontrollertest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{839443B0-A5A4-4364-827B-ED0ADDF32C94}|AuthAPI.Tests.csproj|solutionrelative:integration\\authcontrollertest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{839443B0-A5A4-4364-827B-ED0ADDF32C94}|AuthAPI.Tests.csproj|c:\\work\\authassesment\\authapi.tests\\integration\\usercontrollertest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{839443B0-A5A4-4364-827B-ED0ADDF32C94}|AuthAPI.Tests.csproj|solutionrelative:integration\\usercontrollertest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{839443B0-A5A4-4364-827B-ED0ADDF32C94}|AuthAPI.Tests.csproj|c:\\work\\authassesment\\authapi.tests\\authapi.tests.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{839443B0-A5A4-4364-827B-ED0ADDF32C94}|AuthAPI.Tests.csproj|solutionrelative:authapi.tests.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{839443B0-A5A4-4364-827B-ED0ADDF32C94}|AuthAPI.Tests.csproj|c:\\work\\authassesment\\authapi.tests\\unit\\jwtservicetests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{839443B0-A5A4-4364-827B-ED0ADDF32C94}|AuthAPI.Tests.csproj|solutionrelative:unit\\jwtservicetests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{839443B0-A5A4-4364-827B-ED0ADDF32C94}|AuthAPI.Tests.csproj|c:\\work\\wongaassesment\\authapi.tests\\unit\\authservicetests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{839443B0-A5A4-4364-827B-ED0ADDF32C94}|AuthAPI.Tests.csproj|c:\\work\\authassesment\\authapi.tests\\unit\\authservicetests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{839443B0-A5A4-4364-827B-ED0ADDF32C94}|AuthAPI.Tests.csproj|solutionrelative:unit\\authservicetests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{839443B0-A5A4-4364-827B-ED0ADDF32C94}|AuthAPI.Tests.csproj|c:\\work\\wongaassesment\\authapi.tests\\unit\\passwordhashertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{839443B0-A5A4-4364-827B-ED0ADDF32C94}|AuthAPI.Tests.csproj|c:\\work\\authassesment\\authapi.tests\\unit\\passwordhashertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{839443B0-A5A4-4364-827B-ED0ADDF32C94}|AuthAPI.Tests.csproj|solutionrelative:unit\\passwordhashertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{839443B0-A5A4-4364-827B-ED0ADDF32C94}|AuthAPI.Tests.csproj|c:\\work\\wongaassesment\\authapi.tests\\authapi.tests.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{839443B0-A5A4-4364-827B-ED0ADDF32C94}|AuthAPI.Tests.csproj|solutionrelative:authapi.tests.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     }
   ],
   "DocumentGroupContainers": [
@@ -31,51 +39,77 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "UserControllerTest.cs",
+              "DocumentMoniker": "C:\\work\\AuthAssesment\\AuthAPI.Tests\\Integration\\UserControllerTest.cs",
+              "RelativeDocumentMoniker": "Integration\\UserControllerTest.cs",
+              "ToolTip": "C:\\work\\AuthAssesment\\AuthAPI.Tests\\Integration\\UserControllerTest.cs",
+              "RelativeToolTip": "Integration\\UserControllerTest.cs",
+              "ViewState": "AgIAAFEAAAAAAAAAAAAtwFsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-09T13:05:01.258Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AuthControllerTest.cs",
+              "DocumentMoniker": "C:\\work\\AuthAssesment\\AuthAPI.Tests\\Integration\\AuthControllerTest.cs",
+              "RelativeDocumentMoniker": "Integration\\AuthControllerTest.cs",
+              "ToolTip": "C:\\work\\AuthAssesment\\AuthAPI.Tests\\Integration\\AuthControllerTest.cs",
+              "RelativeToolTip": "Integration\\AuthControllerTest.cs",
+              "ViewState": "AgIAAG0AAAAAAAAAAAAAAHEAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-09T13:04:23.6Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "AuthServiceTests.cs",
-              "DocumentMoniker": "C:\\work\\WongaAssesment\\AuthAPI.Tests\\Unit\\AuthServiceTests.cs",
+              "DocumentMoniker": "C:\\work\\AuthAssesment\\AuthAPI.Tests\\Unit\\AuthServiceTests.cs",
               "RelativeDocumentMoniker": "Unit\\AuthServiceTests.cs",
-              "ToolTip": "C:\\work\\WongaAssesment\\AuthAPI.Tests\\Unit\\AuthServiceTests.cs",
+              "ToolTip": "C:\\work\\AuthAssesment\\AuthAPI.Tests\\Unit\\AuthServiceTests.cs",
               "RelativeToolTip": "Unit\\AuthServiceTests.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAOAAAAAAAAAA==",
+              "ViewState": "AgIAAIMAAAAAAAAAAAAmwIYAAABFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-06T12:14:59.298Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "JwtServiceTests.cs",
-              "DocumentMoniker": "C:\\work\\WongaAssesment\\AuthAPI.Tests\\Unit\\JwtServiceTests.cs",
+              "DocumentMoniker": "C:\\work\\AuthAssesment\\AuthAPI.Tests\\Unit\\JwtServiceTests.cs",
               "RelativeDocumentMoniker": "Unit\\JwtServiceTests.cs",
-              "ToolTip": "C:\\work\\WongaAssesment\\AuthAPI.Tests\\Unit\\JwtServiceTests.cs",
+              "ToolTip": "C:\\work\\AuthAssesment\\AuthAPI.Tests\\Unit\\JwtServiceTests.cs",
               "RelativeToolTip": "Unit\\JwtServiceTests.cs",
-              "ViewState": "AgIAAFkAAAAAAAAAAAAAAGEAAAByAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-06T12:14:42.208Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "PasswordHasherTests.cs",
-              "DocumentMoniker": "C:\\work\\WongaAssesment\\AuthAPI.Tests\\Unit\\PasswordHasherTests.cs",
+              "DocumentMoniker": "C:\\work\\AuthAssesment\\AuthAPI.Tests\\Unit\\PasswordHasherTests.cs",
               "RelativeDocumentMoniker": "Unit\\PasswordHasherTests.cs",
-              "ToolTip": "C:\\work\\WongaAssesment\\AuthAPI.Tests\\Unit\\PasswordHasherTests.cs",
+              "ToolTip": "C:\\work\\AuthAssesment\\AuthAPI.Tests\\Unit\\PasswordHasherTests.cs",
               "RelativeToolTip": "Unit\\PasswordHasherTests.cs",
-              "ViewState": "AgIAAD4AAAAAAAAAAAAAAD4AAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-06T12:14:19.618Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "AuthAPI.Tests",
-              "DocumentMoniker": "C:\\work\\WongaAssesment\\AuthAPI.Tests\\AuthAPI.Tests.csproj",
+              "DocumentIndex": 2,
+              "Title": "AuthAPI.Tests.csproj",
+              "DocumentMoniker": "C:\\work\\AuthAssesment\\AuthAPI.Tests\\AuthAPI.Tests.csproj",
               "RelativeDocumentMoniker": "AuthAPI.Tests.csproj",
-              "ToolTip": "C:\\work\\WongaAssesment\\AuthAPI.Tests\\AuthAPI.Tests.csproj",
+              "ToolTip": "C:\\work\\AuthAssesment\\AuthAPI.Tests\\AuthAPI.Tests.csproj",
               "RelativeToolTip": "AuthAPI.Tests.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAdAAAAAAAAAA==",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAgwBYAAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
               "WhenOpened": "2026-03-06T10:02:41.356Z",
               "EditorCaption": ""

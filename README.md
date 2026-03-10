@@ -2,9 +2,25 @@
 
 A full-stack authentication application built with React, C#, PostgreSQL, and Docker.
 
-> **Live Demo:** [https://auth-client-zywh.onrender.com](https://auth-client-zywh.onrender.com) ← _replace with your Render URL_
+> **Live Demo:** [https://auth-client-zywh.onrender.com](https://auth-client-zywh.onrender.com)
+> 
+> **Figma Design:** [https://www.figma.com/community/file/1613114749630048577/auth-assesment](https://www.figma.com/community/file/1613114749630048577/auth-assesment)
+> 
+> **Postman Collection:** [View Collection](https://www.postman.com/cloudy-sunset-574325/api-auth-assesment)
+> 
+> [![Run in Postman](https://run.pstmn.io/button.svg)](https://www.postman.com/cloudy-sunset-574325/api-auth-assesment)
+
+
+📥 **[Download Postman Collection](./AuthAPI/Postman%20Collection/AuthAssesment.postman_collection.json)**
 
 ---
+```
+
+Also add the collection JSON file to your `.gitignore` exclusion — actually the opposite, make sure it's **not** ignored so it gets committed:
+
+Move the file to your repo at:
+```
+AuthAssesment/AuthAPI/Postman Collection/AuthAssesment.postman_collection.json
 
 ## 📸 Screenshots
 
@@ -161,11 +177,14 @@ AuthAssesment/
 │   ├── Data/                 # AppDbContext (EF Core)
 │   ├── Middleware/           # Exception handling middleware
 │   └── Dockerfile
-├── AuthAPI.Tests/            # Unit tests
-│   └── Unit/
-│       ├── AuthServiceTests.cs
-│       ├── JwtServiceTests.cs
-│       └── PasswordHasherTests.cs
+├── AuthAPI.Tests/            # Unit + Integration tests
+│   ├── Unit/
+│   │   ├── AuthServiceTests.cs
+│   │   ├── JwtServiceTests.cs
+│   │   └── PasswordHasherTests.cs
+│   └── Integration/
+│       ├── AuthControllerTests.cs
+│       └── UserControllerTests.cs
 ├── AuthClient/               # React + TypeScript frontend
 │   ├── src/
 │   │   ├── api/              # Axios instance
@@ -173,7 +192,7 @@ AuthAssesment/
 │   │   ├── context/          # AuthContext (JWT storage)
 │   │   ├── pages/            # Auth + Profile pages
 │   │   └── assets/           # Images
-│   └── Dockerfile
+│   └── Dockerfile 
 ├── docker-compose.yml
 ├── .env                      # Not committed - see setup above
 └── README.md
@@ -186,7 +205,7 @@ AuthAssesment/
 - Passwords are hashed using **BCrypt** before storage
 - Authentication uses **JWT tokens** with configurable expiry
 - Protected routes require a valid Bearer token
-- Environment variables used for all secrets — never hardcoded
+- Environment variables used for all secrets
 
 ---
 

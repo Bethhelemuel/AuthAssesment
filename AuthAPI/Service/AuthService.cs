@@ -25,7 +25,7 @@ namespace AuthAPI.Service
             var existingUser = await _context.Users
                 .FirstOrDefaultAsync(u => u.Email == register.Email);
 
-            if (existingUser != null)
+            if (existingUser != null) 
                 throw new Exception("Email already exists");
 
             string passwordHash = BCrypt.Net.BCrypt.HashPassword(register.Password);

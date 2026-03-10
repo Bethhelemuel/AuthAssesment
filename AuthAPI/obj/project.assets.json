@@ -2506,11 +2506,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\work\\WongaAssesment\\AuthAPI\\AuthAPI.csproj",
+      "projectUniqueName": "C:\\work\\AuthAssesment\\AuthAPI\\AuthAPI.csproj",
       "projectName": "AuthAPI",
-      "projectPath": "C:\\work\\WongaAssesment\\AuthAPI\\AuthAPI.csproj",
+      "projectPath": "C:\\work\\AuthAssesment\\AuthAPI\\AuthAPI.csproj",
       "packagesPath": "C:\\Users\\DevelopHP2\\.nuget\\packages\\",
-      "outputPath": "C:\\work\\WongaAssesment\\AuthAPI\\obj\\",
+      "outputPath": "C:\\work\\AuthAssesment\\AuthAPI\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
