@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react'
-import { useNavigate } from 'react-router-dom'
 import api from '../api/axios'
 import { z } from 'zod'
 import registerImg from '../assets/register.jpg'
@@ -23,7 +22,7 @@ type RegisterErrors = Partial<Record<keyof z.infer<typeof registerSchema>, strin
 type Props = { onSwitch: () => void }
 
 function RegisterForm({ onSwitch }: Props) {
-  const navigate = useNavigate()
+
   const [form, setForm] = useState({
     firstName: '',
     lastName: '',
