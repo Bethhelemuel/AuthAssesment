@@ -28,6 +28,7 @@ A full-stack authentication application built with React, C#, PostgreSQL, and Do
 |-------|-----------|
 | Frontend | React + TypeScript + Vite + Tailwind CSS |
 | Backend | C# ASP.NET Core Web API |
+| ORM | Entity Framework Core + Npgsql |
 | Database | PostgreSQL |
 | Auth | JWT (JSON Web Tokens) |
 | Validation | Zod (frontend) |
@@ -100,11 +101,13 @@ POSTGRES_PORT=5432
 POSTGRES_DB=authdb
 POSTGRES_USER=postgres
 POSTGRES_PASSWORD=yourpassword
-JWT_SECRET=your-super-secret-key-that-is-long-enough
+JWT_SECRET=longandsecuresecretkey
 JWT_ISSUER=AuthAPI
 JWT_AUDIENCE=AuthClient
 JWT_EXPIRATIONDAYS=7
 ```
+
+The `AuthClient/.env` is pre-configured for Docker and does not need to be changed.
 
 ### 3. Run with Docker
 
@@ -164,6 +167,8 @@ API will be available at `http://localhost:5019`
 
 ### 4. Set up the frontend environment
 
+Rename the example env file:
+
 ```bash
 # Windows
 copy AuthClient\.env.example AuthClient\.env
@@ -172,7 +177,7 @@ copy AuthClient\.env.example AuthClient\.env
 cp AuthClient/.env.example AuthClient/.env
 ```
 
-The default `AuthClient/.env` value works for local development:
+The default `AuthClient/.env` is already configured for local development:
 
 ```env
 VITE_API_URL=http://localhost:5019/api
@@ -275,6 +280,7 @@ AuthAssesment/
 │   │   ├── context/          # AuthContext (JWT storage)
 │   │   ├── pages/            # Auth + Profile pages
 │   │   └── assets/           # Images
+│   ├── .env.example          # Copy to .env for local development
 │   └── Dockerfile
 ├── docker-compose.yml
 ├── .env.example              # Copy to .env and fill in your values
@@ -289,7 +295,7 @@ AuthAssesment/
 - Authentication uses **JWT tokens** with configurable expiry
 - Protected routes require a valid Bearer token
 - Environment variables used for all secrets — never hardcoded
-- `.env` is excluded from version control
+- `.env` files are excluded from version control
 
 ---
 
@@ -298,7 +304,7 @@ AuthAssesment/
 **Thato Mphugo**
 
 ---
-
+ 
 ## 📄 License
 
 This project was built as part of a technical assessment.

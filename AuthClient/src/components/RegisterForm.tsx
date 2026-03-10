@@ -67,7 +67,7 @@ function RegisterForm({ onSwitch }: Props) {
       
       // Show success toast
       Toast({
-        text: "Registration successful! Redirecting to login..."
+        text: " Registration successful! Redirecting to login... "
       })
       
       // Switch to login form after a short delay
