@@ -4,6 +4,8 @@ namespace AuthAPI.Tests.Unit
 {
     public class PasswordHasherTests
     {
+
+        // ------------------------------------ HASH PASSWORD RETURNS STRING ------------------------------------
         [Fact]
         public void HashPassword_ReturnsHashedString()
         {
@@ -18,6 +20,7 @@ namespace AuthAPI.Tests.Unit
             Assert.NotEqual(password, hash);
         }
 
+        // ------------------------------------ DIFFERENT HAS SAME PASSWORD -----------------------------------
         [Fact]
         public void HashPassword_SamePassword_ReturnsDifferentHashes()
         {
@@ -28,10 +31,11 @@ namespace AuthAPI.Tests.Unit
             var hash1 = BCrypt.Net.BCrypt.HashPassword(password);
             var hash2 = BCrypt.Net.BCrypt.HashPassword(password);
 
-            // Assert — BCrypt uses salt so hashes should never be identical
+            // Assert 
             Assert.NotEqual(hash1, hash2);
         }
 
+        // ------------------------------------ VERIFY PASSWORD AFTER HASH -----------------------------------
         [Fact]
         public void VerifyPassword_CorrectPassword_ReturnsTrue()
         {
@@ -46,6 +50,7 @@ namespace AuthAPI.Tests.Unit
             Assert.True(result);
         }
 
+        // --------------------------------- INCORRECT PASSWORD RETURNS FALSE ---------------------------------
         [Fact]
         public void VerifyPassword_WrongPassword_ReturnsFalse()
         {

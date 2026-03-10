@@ -15,7 +15,7 @@ namespace AuthAPI.Service
         {
             _config = config;
         }
-
+        // ------------------------------------ CREATE TOKEN  ------------------------------------
         public string GenerateToken(User user) 
         {
             var claims = new[]

@@ -15,16 +15,18 @@ namespace AuthAPI.Tests.Unit
             var config = new ConfigurationBuilder()
                 .AddInMemoryCollection(new Dictionary<string, string>
                 {
-                    { "JwtSettings:SecretKey", "super-secret-test-key-that-is-long-enough" },
+                    { "JwtSettings:SecretKey", "74328HJSFK3432JHK3J2KH42J3KH4KJ23H4KJ23H4KJHKJK" },
                     { "JwtSettings:Issuer", "TestIssuer" },
                     { "JwtSettings:Audience", "TestAudience" },
-                    { "JwtSettings:ExpiryDays", "7" }
+                    { "JwtSettings:ExpiryDays", "1" }
                 })
                 .Build();
 
             _jwtService = new JwtService(config);
         }
 
+
+        // ------------------------------------ GENERATE TOKEN FOR VALID USER  ------------------------------------
         [Fact]
         public void GenerateToken_ValidUser_ReturnsToken()
         {
@@ -47,6 +49,8 @@ namespace AuthAPI.Tests.Unit
             Assert.NotEmpty(token);
         }
 
+
+        // ------------------------------------ TOKEN HAS CORRECT EMAIL  ------------------------------------
         [Fact]
         public void GenerateToken_ContainsCorrectEmail()
         {
@@ -64,7 +68,7 @@ namespace AuthAPI.Tests.Unit
             // Act
             var token = _jwtService.GenerateToken(user);
 
-            // Decode and check claims
+            
             var handler = new JwtSecurityTokenHandler();
             var decoded = handler.ReadJwtToken(token);
             var emailClaim = decoded.Claims
@@ -74,6 +78,7 @@ namespace AuthAPI.Tests.Unit
             Assert.Equal("john@test.com", emailClaim);
         }
 
+        // ------------------------------------ TOKEN HAS CORRECT USER ID  ------------------------------------
         [Fact]
         public void GenerateToken_ContainsCorrectUserId()
         {
@@ -91,7 +96,7 @@ namespace AuthAPI.Tests.Unit
             // Act
             var token = _jwtService.GenerateToken(user);
 
-            // Decode and check claims
+         
             var handler = new JwtSecurityTokenHandler();
             var decoded = handler.ReadJwtToken(token);
             var idClaim = decoded.Claims
@@ -101,6 +106,8 @@ namespace AuthAPI.Tests.Unit
             Assert.Equal("1", idClaim);
         }
 
+
+        // ---------------------------------- GENERATED TOKEN IS NOT EXPIRED  ----------------------------------
         [Fact]
         public void GenerateToken_TokenIsNotExpired()
         {
@@ -118,7 +125,7 @@ namespace AuthAPI.Tests.Unit
             // Act
             var token = _jwtService.GenerateToken(user);
 
-            // Decode and check expiry
+            
             var handler = new JwtSecurityTokenHandler();
             var decoded = handler.ReadJwtToken(token);
 

@@ -37,7 +37,8 @@ namespace AuthAPI.Tests.Integration
             _client = _factory.CreateClient();
         }
 
-        // Helper — register and return JWT token
+
+        // ------------------------------------ REGISTER AND GET TOKEN  -----------------------------------------------
         private async Task<string> RegisterAndGetToken(string email = "profile@integration.com")
         {
             var payload = new
@@ -53,8 +54,8 @@ namespace AuthAPI.Tests.Integration
             return body.GetProperty("token").GetString()!;
         }
 
-        // ─── GET PROFILE ──────────────────────────────────────────────────────────
 
+        // ------------------------------------ GET PROFILE WITH VALID TOKEN 200  -------------------------------------
         [Fact]
         public async Task GetProfile_WithValidToken_Returns200WithUserData()
         {
@@ -74,6 +75,7 @@ namespace AuthAPI.Tests.Integration
             Assert.True(body.TryGetProperty("email", out var email));
             Assert.Equal("validtoken@integration.com", email.GetString());
         }
+        // ------------------------------------ GET PROFILE WITHOUT TOKEN 401  ------------------------------------
 
         [Fact]
         public async Task GetProfile_WithoutToken_Returns401()
@@ -88,6 +90,7 @@ namespace AuthAPI.Tests.Integration
             Assert.Equal(HttpStatusCode.Unauthorized, response.StatusCode);
         }
 
+        // ------------------------------------ GET PROFILE WITH INVALID TOKEN 200  ------------------------------------
         [Fact]
         public async Task GetProfile_WithInvalidToken_Returns401()
         {
@@ -101,7 +104,7 @@ namespace AuthAPI.Tests.Integration
             // Assert
             Assert.Equal(HttpStatusCode.Unauthorized, response.StatusCode);
         }
-
+        // ------------------------------------ GET PROFILE WITH CORRECT FIELDS  ------------------------------------
         [Fact]
         public async Task GetProfile_ReturnsCorrectFields()
         {

@@ -14,12 +14,12 @@ namespace AuthAPI.Service
         {
             _context = context;
         }
-
+        // ------------------------------------ GET PROFILE  ------------------------------------
         public async Task<UserResponseDTO> GetProfile(int userId)
         {
             var user = await _context.Users
                 .FirstOrDefaultAsync(u => u.Id == userId);
-
+             
             if (user == null)
                 throw new KeyNotFoundException("User not found");
 

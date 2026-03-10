@@ -46,8 +46,7 @@
               "RelativeToolTip": "Integration\\UserControllerTest.cs",
               "ViewState": "AgIAAFEAAAAAAAAAAAAtwFsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-09T13:05:01.258Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-09T13:05:01.258Z"
             },
             {
               "$type": "Document",
@@ -59,8 +58,7 @@
               "RelativeToolTip": "Integration\\AuthControllerTest.cs",
               "ViewState": "AgIAAGIAAAAAAAAAAAAAwHEAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-09T13:04:23.6Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-09T13:04:23.6Z"
             },
             {
               "$type": "Document",
@@ -72,8 +70,7 @@
               "RelativeToolTip": "Unit\\AuthServiceTests.cs",
               "ViewState": "AgIAAIMAAAAAAAAAAAAmwIYAAABFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-06T12:14:59.298Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-06T12:14:59.298Z"
             },
             {
               "$type": "Document",
@@ -85,8 +82,7 @@
               "RelativeToolTip": "Unit\\JwtServiceTests.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-06T12:14:42.208Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-06T12:14:42.208Z"
             },
             {
               "$type": "Document",
@@ -98,8 +94,7 @@
               "RelativeToolTip": "Unit\\PasswordHasherTests.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-06T12:14:19.618Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-06T12:14:19.618Z"
             },
             {
               "$type": "Document",
@@ -111,8 +106,7 @@
               "RelativeToolTip": "AuthAPI.Tests.csproj",
               "ViewState": "AgIAAAcAAAAAAAAAAAAgwBYAAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2026-03-06T10:02:41.356Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-06T10:02:41.356Z"
             }
           ]
         }

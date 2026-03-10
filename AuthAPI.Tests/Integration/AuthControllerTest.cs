@@ -38,8 +38,8 @@ namespace AuthAPI.Tests.Integration
             _client = _factory.CreateClient();
         }
 
-        // ─── REGISTER ────────────────────────────────────────────────────────────
 
+        // ------------------------------------------- REGISTER USER 200  ----------------------------------------
         [Fact]
         public async Task Register_ValidUser_Returns200WithToken()
         {
@@ -62,6 +62,7 @@ namespace AuthAPI.Tests.Integration
             Assert.False(string.IsNullOrEmpty(token.GetString()));
         }
 
+        // ------------------------------------ REGISTER DUPLICATE EMAIL 500  ------------------------------------
         [Fact]
         public async Task Register_DuplicateEmail_Returns500WithMessage()
         {
@@ -86,6 +87,8 @@ namespace AuthAPI.Tests.Integration
             Assert.Equal("Email already exists", message.GetString());
         }
 
+
+        // ------------------------------- REGISTER MISSING FIELDS  400  -----------------------------
         [Fact]
         public async Task Register_MissingFields_Returns400()
         {
@@ -104,8 +107,8 @@ namespace AuthAPI.Tests.Integration
             Assert.Equal(HttpStatusCode.BadRequest, response.StatusCode);
         }
 
-        // ─── LOGIN ────────────────────────────────────────────────────────────────
 
+        // ------------------------------------ LOGIN VALID 200  ------------------------------------
         [Fact]
         public async Task Login_ValidCredentials_Returns200WithToken()
         {
@@ -135,6 +138,8 @@ namespace AuthAPI.Tests.Integration
             Assert.False(string.IsNullOrEmpty(token.GetString()));
         }
 
+
+        // ------------------------------------ LOGIN WRONG PASSWORD 500  ------------------------------------
         [Fact]
         public async Task Login_WrongPassword_Returns500WithMessage()
         {
@@ -164,6 +169,8 @@ namespace AuthAPI.Tests.Integration
             Assert.Equal("Invalid email or password", message.GetString());
         }
 
+        X
+        // ------------------------------------ LOGIN EMAIL NOT FOUND 500  ------------------------------------
         [Fact]
         public async Task Login_EmailNotFound_Returns500WithMessage()
         {

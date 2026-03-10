@@ -20,6 +20,7 @@ namespace AuthAPI.Service
 
         }
 
+        // ------------------------------------ CREATE USER  ------------------------------------
         public async Task<string> Register(RegisterDTO register)
         {
             var existingUser = await _context.Users
@@ -45,22 +46,23 @@ namespace AuthAPI.Service
             return _jwtService.GenerateToken(user);
         }
 
+        // ------------------------------------ LOGIN USER  ------------------------------------
         public async Task<string> Login(LoginDTO login)
         {
-            // 1. Find user by email
+            
             var user = await _context.Users
                 .FirstOrDefaultAsync(u => u.Email == login.Email);
 
             if (user == null)
                 throw new Exception("Invalid email or password");
 
-            // 2. Verify password
+            
             bool isPasswordValid = BCrypt.Net.BCrypt.Verify(login.Password, user.PasswordHash);
 
             if (!isPasswordValid)
                 throw new Exception("Invalid email or password");
 
-            // 3. Return token (JWT coming next)
+
             return _jwtService.GenerateToken(user);
         }
     }

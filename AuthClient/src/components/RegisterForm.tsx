@@ -6,6 +6,7 @@ import registerImg from '../assets/register.jpg'
 import Button from './ui/Button'
 import Input from './ui/Input'
 import Footer from './ui/Footer'
+import Toast from './ui/Toast'
 
 const registerSchema = z.object({
   firstName: z.string().min(1, 'First name is required'),
@@ -64,7 +65,16 @@ function RegisterForm({ onSwitch }: Props) {
     try {
       const { confirmPassword, ...payload } = form
       await api.post('/auth/register', payload)
-      navigate('/login')
+      
+      // Show success toast
+      Toast({
+        text: "Registration successful! Redirecting to login..."
+      })
+      
+      // Switch to login form after a short delay
+      setTimeout(() => {
+        onSwitch()
+      }, 1000)
     } catch (error: any) {
       setError(error.response?.data?.message || 'Registration failed. Email may already exist.')
     } finally {

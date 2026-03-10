@@ -10,23 +10,15 @@ A full-stack authentication application built with React, C#, PostgreSQL, and Do
 > 
 > [![Run in Postman](https://run.pstmn.io/button.svg)](https://www.postman.com/cloudy-sunset-574325/api-auth-assesment)
 
-
 📥 **[Download Postman Collection](./AuthAPI/Postman%20Collection/AuthAssesment.postman_collection.json)**
 
 ---
-```
-
-Also add the collection JSON file to your `.gitignore` exclusion — actually the opposite, make sure it's **not** ignored so it gets committed:
-
-Move the file to your repo at:
-```
-AuthAssesment/AuthAPI/Postman Collection/AuthAssesment.postman_collection.json
 
 ## 📸 Screenshots
 
 | Login | Register | Profile | 404 |
-|-------|----------|---------|---------|
-| ![Login](./AuthClient/src/assets/LoginBG.jpg) | ![Register](./AuthClient/src/assets/RegisterBG.jpg) | ![Profile](./AuthClient/src/assets/ProfileBG.jpg) | ![NotFound](./AuthClient/src/assets/404BG.jpg) 
+|-------|----------|---------|-----|
+| ![Login](./AuthClient/src/assets/LoginBG.jpg) | ![Register](./AuthClient/src/assets/RegisterBG.jpg) | ![Profile](./AuthClient/src/assets/ProfileBG.jpg) | ![NotFound](./AuthClient/src/assets/404BG.jpg) |
 
 ---
 
@@ -51,7 +43,7 @@ AuthAssesment/AuthAPI/Postman Collection/AuthAssesment.postman_collection.json
 │                Docker Compose                   │
 │                                                 │
 │  ┌──────────────┐     ┌──────────────────────┐  │
-│  │   React App  │────▶│   C# ASP.NET API    │  │
+│  │   React App  │────▶│   C# ASP.NET API     │  │
 │  │   (nginx:80) │     │   (Port 5019)        │  │
 │  └──────────────┘     └──────────┬───────────┘  │
 │                                  │              │
@@ -66,21 +58,41 @@ AuthAssesment/AuthAPI/Postman Collection/AuthAssesment.postman_collection.json
 
 ## 🚀 Getting Started
 
-### Prerequisites
+Choose how you want to run the project:
 
+- [🐳 Run with Docker](#-run-with-docker) ← recommended
+- [💻 Run Locally without Docker](#-run-locally-without-docker)
+
+---
+
+## 🐳 Run with Docker
+
+### Prerequisites
 - [Docker Desktop](https://docs.docker.com/get-started/get-docker/)
 - [Git](https://git-scm.com/)
 
 ### 1. Clone the repository
 
 ```bash
-git https://github.com/Bethhelemuel/AuthAssesment.git
+git clone https://github.com/Bethhelemuel/AuthAssesment.git
 cd AuthAssesment
 ```
 
-### 2. Create your `.env` file
+### 2. Set up environment files
 
-Create a `.env` file in the root folder:
+Rename the example env files:
+
+```bash
+# Windows
+copy .env.example .env
+copy AuthClient\.env.example AuthClient\.env
+
+# Mac/Linux
+cp .env.example .env
+cp AuthClient/.env.example AuthClient/.env
+```
+
+Then open the root `.env` and fill in your values:
 
 ```env
 POSTGRES_HOST=postgres
@@ -88,7 +100,7 @@ POSTGRES_PORT=5432
 POSTGRES_DB=authdb
 POSTGRES_USER=postgres
 POSTGRES_PASSWORD=yourpassword
-JWT_SECRET=*****************************
+JWT_SECRET=your-super-secret-key-that-is-long-enough
 JWT_ISSUER=AuthAPI
 JWT_AUDIENCE=AuthClient
 JWT_EXPIRATIONDAYS=7
@@ -106,6 +118,75 @@ docker-compose up --build
 |---------|-----|
 | Frontend | http://localhost |
 | API | http://localhost:5019 |
+
+---
+
+## 💻 Run Locally without Docker
+
+### Prerequisites
+- [.NET 8 SDK](https://dotnet.microsoft.com/download/dotnet/8)
+- [Node.js 20+](https://nodejs.org/)
+- [PostgreSQL](https://www.postgresql.org/download/)
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/Bethhelemuel/AuthAssesment.git
+cd AuthAssesment
+```
+
+### 2. Set up the database
+
+Create a PostgreSQL database called `authdb` then open `AuthAPI/appsettings.json` and update with your own credentials:
+
+```json
+"ConnectionStrings": {
+  "DefaultConnection": "Host=localhost;Database=authdb;Username=postgres;Password=your-password"
+},
+"JwtSettings": {
+  "SecretKey": "your-secret-key-here",
+  "Issuer": "AuthAPI",
+  "Audience": "AuthAPIUsers",
+  "ExpiryDays": 1
+}
+```
+
+### 3. Run the API
+
+```bash
+cd AuthAPI
+dotnet restore
+dotnet ef database update
+dotnet run
+```
+
+API will be available at `http://localhost:5019`
+
+### 4. Set up the frontend environment
+
+```bash
+# Windows
+copy AuthClient\.env.example AuthClient\.env
+
+# Mac/Linux
+cp AuthClient/.env.example AuthClient/.env
+```
+
+The default `AuthClient/.env` value works for local development:
+
+```env
+VITE_API_URL=http://localhost:5019/api
+```
+
+### 5. Run the frontend
+
+```bash
+cd AuthClient
+npm install
+npm run dev
+```
+
+Frontend will be available at `http://localhost:5173`
 
 ---
 
@@ -156,11 +237,13 @@ dotnet test
 
 ### Test Coverage
 
-| File | Tests |
-|------|-------|
-| `AuthServiceTests.cs` | Register + Login logic |
-| `JwtServiceTests.cs` | Token generation + claims |
-| `PasswordHasherTests.cs` | BCrypt hashing + verification |
+| File | Type | Tests |
+|------|------|-------|
+| `PasswordHasherTests.cs` | Unit | BCrypt hashing + verification |
+| `JwtServiceTests.cs` | Unit | Token generation + claims |
+| `AuthServiceTests.cs` | Unit | Register + Login logic |
+| `AuthControllerTests.cs` | Integration | Auth endpoints full HTTP flow |
+| `UserControllerTests.cs` | Integration | Profile endpoint + JWT auth |
 
 ---
 
@@ -192,9 +275,9 @@ AuthAssesment/
 │   │   ├── context/          # AuthContext (JWT storage)
 │   │   ├── pages/            # Auth + Profile pages
 │   │   └── assets/           # Images
-│   └── Dockerfile 
+│   └── Dockerfile
 ├── docker-compose.yml
-├── .env                      # Not committed - see setup above
+├── .env.example              # Copy to .env and fill in your values
 └── README.md
 ```
 
@@ -205,7 +288,8 @@ AuthAssesment/
 - Passwords are hashed using **BCrypt** before storage
 - Authentication uses **JWT tokens** with configurable expiry
 - Protected routes require a valid Bearer token
-- Environment variables used for all secrets
+- Environment variables used for all secrets — never hardcoded
+- `.env` is excluded from version control
 
 ---
 
@@ -213,7 +297,7 @@ AuthAssesment/
 
 **Thato Mphugo**
 
---- 
+---
 
 ## 📄 License
 

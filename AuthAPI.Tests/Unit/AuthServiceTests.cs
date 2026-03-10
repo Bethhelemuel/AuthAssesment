@@ -17,6 +17,7 @@ namespace AuthAPI.Tests.Unit
 
         public AuthServiceTests()
         {
+            //SETUPIN-MEMORY DB
             var options = new DbContextOptionsBuilder<AppDbContext>()
                 .UseInMemoryDatabase(databaseName: Guid.NewGuid().ToString())
                 .Options;
@@ -26,8 +27,8 @@ namespace AuthAPI.Tests.Unit
             _authService = new AuthService(_context, _jwtServiceMock.Object);
         }
 
-        // ─── REGISTER ─────────────────────────────────────────────
 
+        // ------------------------------------ VALID USER RETURNS TOKEN  ------------------------------------
         [Fact]
         public async Task Register_ValidUser_ReturnsToken()
         {
@@ -51,6 +52,8 @@ namespace AuthAPI.Tests.Unit
             Assert.Equal("fake-jwt-token", token);
         }
 
+
+        // ------------------------------------ REGISTER SAVES USER TO DB  ------------------------------------
         [Fact]
         public async Task Register_SavesUserToDatabase()
         {
@@ -77,6 +80,9 @@ namespace AuthAPI.Tests.Unit
             Assert.Equal("Jane", user.FirstName);
         }
 
+
+
+        // ---------------------------------- REGISTER DUPLICATE EMAIL THROWS ERROR  --------------------------------
         [Fact]
         public async Task Register_DuplicateEmail_ThrowsException()
         {
@@ -105,6 +111,8 @@ namespace AuthAPI.Tests.Unit
             Assert.Equal("Email already exists", ex.Message);
         }
 
+
+        // ------------------------------------ REGISTER PASSWORD IS HASHED  ------------------------------------
         [Fact]
         public async Task Register_PasswordIsHashed()
         {
@@ -132,8 +140,8 @@ namespace AuthAPI.Tests.Unit
             Assert.True(BCrypt.Net.BCrypt.Verify("Password123", user.PasswordHash));
         }
 
-        // ─── LOGIN ────────────────────────────────────────────────
 
+        // ------------------------------------ LOGIN RETURNS TOKEN  ------------------------------------
         [Fact]
         public async Task Login_ValidCredentials_ReturnsToken()
         {
@@ -166,6 +174,8 @@ namespace AuthAPI.Tests.Unit
             Assert.Equal("fake-jwt-token", token);
         }
 
+
+        // ------------------------------------ LOGIN WRONG PASSWORD  ------------------------------------
         [Fact]
         public async Task Login_WrongPassword_ThrowsException()
         {
@@ -193,6 +203,7 @@ namespace AuthAPI.Tests.Unit
             Assert.Equal("Invalid email or password", ex.Message);
         }
 
+        // ------------------------------------ LOGIN EMAIL NOT FOUND  -----------------------------------
         [Fact]
         public async Task Login_EmailNotFound_ThrowsException()
         {

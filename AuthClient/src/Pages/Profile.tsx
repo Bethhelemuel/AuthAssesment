@@ -1,10 +1,11 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useRef } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useAuth } from '../context/AuthContext'
 import api from '../api/axios'
 import profileImg from '../assets/profile.jpg'
 import Button from '../components/ui/Button'
 import Footer from '../components/ui/Footer'
+import Toast from '../components/ui/Toast'
 
 type User = {
   firstName: string
@@ -38,12 +39,21 @@ const Profile = () => {
   const [error, setError] = useState('')
   const [showPassword, setShowPassword] = useState(false)
   const [isLoggingOut, setIsLoggingOut] = useState(false)
+  const hasShownWelcomeRef = useRef(false)
 
   useEffect(() => {
     const fetchUser = async () => {
       try {
         const res = await api.get('/user/profile')
         setUser(res.data)
+        
+        // Show welcome toast on first load only
+        if (!hasShownWelcomeRef.current) {
+          Toast({
+            text: `Hi ${res.data.firstName}!`
+          })
+          hasShownWelcomeRef.current = true
+        }
       } catch {
         setError('Failed to load profile')
       }
