@@ -44,7 +44,7 @@ builder.Services.AddCors(options =>
           policy.WithOrigins(
                 "http://localhost:5173",                // local dev
                 "http://localhost",                     // Docker 
-                "http://localhost:80",                  // Docker explicit
+                "http://localhost:8085",                // Docker explicit
                 "https://auth-client-zywh.onrender.com" // Live Link 
   )  
         .AllowAnyHeader()

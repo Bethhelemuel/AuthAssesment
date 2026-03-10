@@ -119,7 +119,7 @@ docker-compose up --build
 
 | Service | URL |
 |---------|-----|
-| Frontend | http://localhost |
+| Frontend | http://localhost:8085 |
 | API | http://localhost:5019 |
 
 ---
