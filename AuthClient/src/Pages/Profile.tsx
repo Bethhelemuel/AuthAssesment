@@ -72,7 +72,7 @@ const Profile = () => {
   }
 
   return (
-    <div className={PROFILE_LAYOUT.BG_COLOR}>
+    <div className={`min-h-screen min-w-screen flex items-center justify-center ${PROFILE_LAYOUT.BG_COLOR}`}>
       {/* ----------------- Card ----------------- */}
       <div className={PROFILE_LAYOUT.CONTAINER_CLASSES}>
 

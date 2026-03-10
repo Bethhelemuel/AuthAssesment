@@ -7,6 +7,10 @@
       "RelativeMoniker": "D:0:0:{2A1E4125-149D-4CFB-AED8-EDDFF41096DC}|AuthAPI.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{2A1E4125-149D-4CFB-AED8-EDDFF41096DC}|AuthAPI.csproj|c:\\work\\authassesment\\authapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{2A1E4125-149D-4CFB-AED8-EDDFF41096DC}|AuthAPI.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{2A1E4125-149D-4CFB-AED8-EDDFF41096DC}|AuthAPI.csproj|c:\\work\\authassesment\\authapi\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{2A1E4125-149D-4CFB-AED8-EDDFF41096DC}|AuthAPI.csproj|solutionrelative:properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
@@ -21,10 +25,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{2A1E4125-149D-4CFB-AED8-EDDFF41096DC}|AuthAPI.csproj|c:\\work\\authassesment\\authapi\\dtos\\authdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2A1E4125-149D-4CFB-AED8-EDDFF41096DC}|AuthAPI.csproj|solutionrelative:dtos\\authdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2A1E4125-149D-4CFB-AED8-EDDFF41096DC}|AuthAPI.csproj|c:\\work\\authassesment\\authapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{2A1E4125-149D-4CFB-AED8-EDDFF41096DC}|AuthAPI.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2A1E4125-149D-4CFB-AED8-EDDFF41096DC}|AuthAPI.csproj|c:\\work\\authassesment\\authapi\\service\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -104,7 +104,7 @@
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "C:\\work\\AuthAssesment\\AuthAPI\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAADsAAAAAAAAAAAAAAEkAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAB0AAAAAAAAAAAAAACcAAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-04T13:45:04.498Z",
               "EditorCaption": ""
@@ -135,7 +135,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "launchSettings.json",
               "DocumentMoniker": "C:\\work\\AuthAssesment\\AuthAPI\\Properties\\launchSettings.json",
               "RelativeDocumentMoniker": "Properties\\launchSettings.json",
@@ -147,7 +147,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "User.cs",
               "DocumentMoniker": "C:\\work\\AuthAssesment\\AuthAPI\\Models\\User.cs",
               "RelativeDocumentMoniker": "Models\\User.cs",
@@ -159,19 +159,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 1,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\work\\AuthAssesment\\AuthAPI\\appsettings.json",
               "RelativeDocumentMoniker": "appsettings.json",
               "ToolTip": "C:\\work\\AuthAssesment\\AuthAPI\\appsettings.json",
               "RelativeToolTip": "appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-03-04T14:44:19.176Z"
+              "WhenOpened": "2026-03-04T14:44:19.176Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "AuthDTO.cs",
               "DocumentMoniker": "C:\\work\\AuthAssesment\\AuthAPI\\DTOs\\AuthDTO.cs",
               "RelativeDocumentMoniker": "DTOs\\AuthDTO.cs",
@@ -183,7 +184,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "IAuthService.cs",
               "DocumentMoniker": "C:\\work\\AuthAssesment\\AuthAPI\\Interface\\IAuthService.cs",
               "RelativeDocumentMoniker": "Interface\\IAuthService.cs",

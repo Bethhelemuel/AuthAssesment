@@ -94,8 +94,7 @@
               "RelativeToolTip": "Service\\AuthService.cs",
               "ViewState": "AgIAAB8AAAAAAAAAAAAAAEAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-04T19:13:12.169Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-04T19:13:12.169Z"
             },
             {
               "$type": "Document",
@@ -120,8 +119,7 @@
               "RelativeToolTip": "Service\\JwwtService.cs",
               "ViewState": "AgIAABAAAAAAAAAAAAAQwBEAAAA8AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-04T19:55:04.174Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-04T19:55:04.174Z"
             },
             {
               "$type": "Document",
@@ -133,8 +131,7 @@
               "RelativeToolTip": "Service\\UserService.cs",
               "ViewState": "AgIAABgAAAAAAAAAAAAYwBUAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-06T13:32:06.636Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-06T13:32:06.636Z"
             },
             {
               "$type": "Document",
@@ -146,8 +143,7 @@
               "RelativeToolTip": "Properties\\launchSettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACUAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-03-04T20:22:35.27Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-04T20:22:35.27Z"
             },
             {
               "$type": "Document",
@@ -159,8 +155,7 @@
               "RelativeToolTip": "Models\\User.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-04T13:49:23.492Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-04T13:49:23.492Z"
             },
             {
               "$type": "Document",
@@ -172,8 +167,7 @@
               "RelativeToolTip": "appsettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-03-04T14:44:19.176Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-04T14:44:19.176Z"
             },
             {
               "$type": "Document",
@@ -185,8 +179,7 @@
               "RelativeToolTip": "DTOs\\AuthDTO.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-04T14:10:24.961Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-04T14:10:24.961Z"
             },
             {
               "$type": "Document",
@@ -198,8 +191,7 @@
               "RelativeToolTip": "Interface\\IAuthService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-04T19:10:24.908Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-04T19:10:24.908Z"
             },
             {
               "$type": "Document",
@@ -247,8 +239,7 @@
               "RelativeToolTip": "Data\\DBContext.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-04T14:36:00.369Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-04T14:36:00.369Z"
             },
             {
               "$type": "Document",
@@ -260,8 +251,7 @@
               "RelativeToolTip": "DTOs\\UserDTO.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-04T13:45:37.556Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-04T13:45:37.556Z"
             },
             {
               "$type": "Document",

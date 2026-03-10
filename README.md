@@ -38,7 +38,6 @@ A full-stack authentication application built with React, C#, PostgreSQL, and Do
 ---
 
 ## 🏗️ Architecture
-
 ```
 ┌─────────────────────────────────────────────────┐
 │                Docker Compose                   │
@@ -54,6 +53,16 @@ A full-stack authentication application built with React, C#, PostgreSQL, and Do
 │                       └──────────────────────┘  │
 └─────────────────────────────────────────────────┘
 ```
+
+---
+
+## ⚙️ How It Works
+
+1. User registers with name, email, and password
+2. Password is hashed with BCrypt before being stored in PostgreSQL
+3. On login, a signed JWT token is returned to the client
+4. The token is stored and sent as a Bearer header on protected requests
+5. The API validates the token and returns the authenticated user's profile
 
 ---
 
@@ -73,7 +82,6 @@ Choose how you want to run the project:
 - [Git](https://git-scm.com/)
 
 ### 1. Clone the repository
-
 ```bash
 git clone https://github.com/Bethhelemuel/AuthAssesment.git
 cd AuthAssesment
@@ -82,7 +90,6 @@ cd AuthAssesment
 ### 2. Set up environment files
 
 Rename the example env files:
-
 ```bash
 # Windows
 copy .env.example .env
@@ -94,7 +101,6 @@ cp AuthClient/.env.example AuthClient/.env
 ```
 
 Then open the root `.env` and fill in your values:
-
 ```env
 POSTGRES_HOST=postgres
 POSTGRES_PORT=5432
@@ -110,7 +116,6 @@ JWT_EXPIRATIONDAYS=7
 The `AuthClient/.env` is pre-configured for Docker and does not need to be changed.
 
 ### 3. Run with Docker
-
 ```bash
 docker-compose up --build
 ```
@@ -120,7 +125,10 @@ docker-compose up --build
 | Service | URL |
 |---------|-----|
 | Frontend | http://localhost:8085 |
-| API | http://localhost:8081 | 
+| API | http://localhost:8081 |
+| PostgreSQL | localhost:5439 |
+
+> **Note:** Custom ports are used to avoid conflicts with services that may already be running on your machine.
 
 ---
 
@@ -132,7 +140,6 @@ docker-compose up --build
 - [PostgreSQL](https://www.postgresql.org/download/)
 
 ### 1. Clone the repository
-
 ```bash
 git clone https://github.com/Bethhelemuel/AuthAssesment.git
 cd AuthAssesment
@@ -141,7 +148,6 @@ cd AuthAssesment
 ### 2. Set up the database
 
 Create a PostgreSQL database called `authdb` then open `AuthAPI/appsettings.json` and update with your own credentials:
-
 ```json
 "ConnectionStrings": {
   "DefaultConnection": "Host=localhost;Database=authdb;Username=postgres;Password=your-password"
@@ -155,7 +161,6 @@ Create a PostgreSQL database called `authdb` then open `AuthAPI/appsettings.json
 ```
 
 ### 3. Run the API
-
 ```bash
 cd AuthAPI
 dotnet restore
@@ -168,7 +173,6 @@ API will be available at `http://localhost:5019`
 ### 4. Set up the frontend environment
 
 Rename the example env file:
-
 ```bash
 # Windows
 copy AuthClient\.env.example AuthClient\.env
@@ -178,13 +182,11 @@ cp AuthClient/.env.example AuthClient/.env
 ```
 
 The default `AuthClient/.env` is already configured for local development:
-
 ```env
 VITE_API_URL=http://localhost:5019/api
 ```
 
 ### 5. Run the frontend
-
 ```bash
 cd AuthClient
 npm install
@@ -234,7 +236,6 @@ Authorization: Bearer <your_jwt_token>
 ---
 
 ## 🧪 Running Tests
-
 ```bash
 cd AuthAPI.Tests
 dotnet test
@@ -253,7 +254,6 @@ dotnet test
 ---
 
 ## 📁 Project Structure
-
 ```
 AuthAssesment/
 ├── AuthAPI/                  # C# ASP.NET Core Web API
@@ -290,6 +290,36 @@ AuthAssesment/
 
 ---
 
+## 🛠️ Troubleshooting
+
+**Port already in use?**
+The app uses non-standard ports to avoid conflicts:
+
+| Service | External Port |
+|---------|--------------|
+| Frontend | 8085 |
+| API | 8081 |
+| PostgreSQL | 5439 |
+
+If any port is still in use, update the left side of the port mapping in `docker-compose.yml`:
+```yaml
+ports:
+  - "NEW_PORT:INTERNAL_PORT"
+```
+
+**Docker daemon not running?**
+```bash
+# Linux
+sudo systemctl start docker
+
+# Mac/Windows — open Docker Desktop and wait for it to fully start
+```
+
+**Database connection issues?**
+Ensure your `.env` file has the correct values and that `POSTGRES_HOST=postgres` when running via Docker.
+
+---
+
 ## 🔒 Security
 
 - Passwords are hashed using **BCrypt** before storage
@@ -305,7 +335,7 @@ AuthAssesment/
 **Thato Mphugo**
 
 ---
- 
+
 ## 📄 License
 
 This project was built as part of a technical assessment.

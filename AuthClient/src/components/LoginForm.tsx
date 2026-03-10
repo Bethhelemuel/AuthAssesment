@@ -23,7 +23,10 @@ import {
 } from '../constants'
 
 //ZOD schema for validation
-const loginSchema = z.object(LOGIN_SCHEMA)
+const loginSchema = z.object({
+  [LOGIN_FIELDS.EMAIL]: z.string().email(LOGIN_SCHEMA.email),
+  [LOGIN_FIELDS.PASSWORD]: z.string().min(6, LOGIN_SCHEMA.password),
+})
 
 type Props = { onSwitch: () => void }
 

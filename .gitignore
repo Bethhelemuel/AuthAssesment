@@ -3,3 +3,4 @@
 /AuthAPI/bin
 /AuthClient/.env
 .env
+/AuthAPI.Tests/.vs

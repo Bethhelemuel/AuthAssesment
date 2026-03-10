@@ -903,3 +903,4 @@ C:\work\AuthAssesment\AuthAPI.Tests\obj\Debug\net8.0\refint\AuthAPI.Tests.dll
 C:\work\AuthAssesment\AuthAPI.Tests\obj\Debug\net8.0\AuthAPI.Tests.pdb
 C:\work\AuthAssesment\AuthAPI.Tests\obj\Debug\net8.0\AuthAPI.Tests.genruntimeconfig.cache
 C:\work\AuthAssesment\AuthAPI.Tests\obj\Debug\net8.0\ref\AuthAPI.Tests.dll
+C:\work\AuthAssesment\AuthAPI.Tests\bin\Debug\net8.0\Postman Collection\postman_collection.json

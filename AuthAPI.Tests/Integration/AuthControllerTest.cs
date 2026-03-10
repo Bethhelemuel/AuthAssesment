@@ -169,7 +169,7 @@ namespace AuthAPI.Tests.Integration
             Assert.Equal("Invalid email or password", message.GetString());
         }
 
-        X
+        
         // ------------------------------------ LOGIN EMAIL NOT FOUND 500  ------------------------------------
         [Fact]
         public async Task Login_EmailNotFound_Returns500WithMessage()
