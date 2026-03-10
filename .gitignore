@@ -1,3 +1,5 @@
+/AuthClient/node_modules
 /AuthAPI/.vs
+/AuthAPI/bin
 /AuthClient/.env
 .env

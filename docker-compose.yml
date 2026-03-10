@@ -10,7 +10,7 @@ services:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
     ports:
-      - "5432:5432"
+      - "5439:5432" 
     volumes:
       - postgres_data:/var/lib/postgresql/data
     networks:
@@ -22,7 +22,7 @@ services:
       dockerfile: AuthAPI/Dockerfile
     container_name: auth-api
     ports:
-      - "5019:5019"
+      - "8081:5019"
     environment:
       - ASPNETCORE_URLS=http://+:5019
       - ConnectionStrings__DefaultConnection=Host=${POSTGRES_HOST};Port=${POSTGRES_PORT};Database=${POSTGRES_DB};Username=${POSTGRES_USER};Password=${POSTGRES_PASSWORD}
@@ -40,10 +40,10 @@ services:
       context: ./AuthClient
       dockerfile: Dockerfile
       args:
-      - VITE_API_URL=http://localhost/api
+        - VITE_API_URL=http://localhost:8081/api
     container_name: auth-frontend
     ports:
-      - "80:80"
+      - "8085:80"
     depends_on:
       - api
     networks:
